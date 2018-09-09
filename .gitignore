@@ -1,0 +1,13 @@
+.idea/
+__pycache__/
+__archive__/
+__unlinkedsupport__/
+env/
+build/
+dist/
+venv/
+run.spec
+shape_calculator.spec
+
+temp.py
+
