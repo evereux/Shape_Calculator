@@ -62,7 +62,12 @@ def get_image(image_name):
     :param image_name:
     :return:
     """
-    cwd = os.getcwd()
+
+    try:
+        cwd = sys._MEIPASS
+    except Exception:
+        cwd = os.path.abspath(".")
+
     path_to_images = r'application/images/'
     image = path_to_images + image_name + '.png'
     image_name = os.path.join(cwd, image)

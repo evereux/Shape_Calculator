@@ -6,8 +6,11 @@ env/
 build/
 dist/
 venv/
+
 run.spec
+run_onefile.spec
 shape_calculator.spec
+
 
 temp.py
 

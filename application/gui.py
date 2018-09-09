@@ -83,7 +83,7 @@ class CalculateApp(QtGui.QMainWindow, uiFormTabs.Ui_MainWindow):
         text = """<h1>{}</h1>
 <p>version: {}</p>
 <p>Created by Paul Bourne. Contact: <a href="mailto:{}">{}</a><br>
-Source code available at: <a href="">Github</a></p>
+Source code available at: <a href="https://github.com/evereux/Shape_Calculator">Github</a></p>
 <p>Uses python3, PyQt4, num2words and pint.</p>
 """.format(title, version, email, email)
 
