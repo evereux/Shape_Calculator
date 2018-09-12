@@ -7,35 +7,35 @@ class RectangleCalc:
         self.y = y
         self.r = r
 
-    def rectangleProperties(self):
+    def properties(self):
 
         warning = False
         x = self.x
         y = self.y
         r = self.r
-        areaSqrCorners = 0
-        areaCircle = 0
-        cfmSqrCorners = 0
-        cfmCircle = 0
+        area_sqr_corners = 0
+        area_circle = 0
+        cfm_sqr_corners = 0
+        cfm_circle = 0
 
         if (x == 0) and (y == 0):
             warning = True
 
         # area of rectangle
-        areaRectangle = x * y
+        area_rectangle = x * y
         # circumference of the rectangle
-        cfmRectangle = (x * 2) + (y * 2)
+        cfm_rectangle = (x * 2) + (y * 2)
 
         # if we have an input for r
         if r > 0:
             # area of square corners
-            areaSqrCorners = (r * r) * 4
-            areaCircle = pi * (r ** 2)
-            cfmSqrCorners = (r * 2) * 4
-            cfmCircle = 2 * pi * r
+            area_sqr_corners = (r * r) * 4
+            area_circle = pi * (r ** 2)
+            cfm_sqr_corners = (r * 2) * 4
+            cfm_circle = 2 * pi * r
 
-        area = areaRectangle - areaSqrCorners + areaCircle
-        cfm = cfmRectangle - cfmSqrCorners + cfmCircle
+        area = area_rectangle - area_sqr_corners + area_circle
+        cfm = cfm_rectangle - cfm_sqr_corners + cfm_circle
 
         return (x, y, r, area, cfm, warning)
 

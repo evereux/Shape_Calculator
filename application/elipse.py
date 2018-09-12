@@ -10,7 +10,7 @@ class ElipseCalc:
         self.area = area
         self.cfm = cfm
 
-    def elipse_properties(self):
+    def properties(self):
 
         warning = False
 

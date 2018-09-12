@@ -2,7 +2,7 @@ import os
 
 from decimal import Decimal
 
-def convertUnits(value, unitFrom, unitTo, unit, ureg):
+def convert_units(value, unit_from, unit_to, unit, ureg):
     vP = ""  # value power eg area m**2
     allgood = False
     alist = ['length', 'mass', 'massflow']
@@ -11,18 +11,18 @@ def convertUnits(value, unitFrom, unitTo, unit, ureg):
         allgood = True
     elif unit == "area":
         vP = "**2"
-        unitFrom = unitFrom[:-1]
-        unitTo = unitTo[:-1]
+        unit_from = unit_from[:-1]
+        unit_to = unit_to[:-1]
         allgood = True
     elif unit == "volume":
         vP = "**3"
-        unitFrom = unitFrom[:-1]
-        unitTo = unitTo[:-1]
+        unit_from = unit_from[:-1]
+        unit_to = unit_to[:-1]
         allgood = True
     elif unit == "density":
         vP = "**3"
-        unitFrom = unitFrom[:-1]
-        unitTo = unitTo[:-1]
+        unit_from = unit_from[:-1]
+        unit_to = unit_to[:-1]
         allgood = True
     elif unit == "mass":
         allgood = True
@@ -31,10 +31,10 @@ def convertUnits(value, unitFrom, unitTo, unit, ureg):
     v = 0
 
     if allgood:
-        unitFrom = unitFrom + vP
-        unitTo = unitTo + vP
-        v = value * ureg.parse_expression(unitFrom)
-        v = v.to(ureg.parse_expression(unitTo))
+        unit_from = unit_from + vP
+        unit_to = unit_to + vP
+        v = value * ureg.parse_expression(unit_from)
+        v = v.to(ureg.parse_expression(unit_to))
         v = v.magnitude
 
     v = f_round(v)

@@ -7,7 +7,7 @@ class CircleCalc:
         self.area = area
         self.cfm = cfm
 
-    def circleProperties(self):
+    def properties(self):
 
         warning = False
 

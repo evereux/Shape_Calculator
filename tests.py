@@ -7,5 +7,5 @@ cfm = 8
 
 EC = ElipseCalc(semimajor, semiminor, False, False)
 
-_, _, area, cfm, _ = EC.elipse_properties()
+_, _, area, cfm, _ = EC.properties()
 print("Area: {}, CFM: {}".format(area, cfm))

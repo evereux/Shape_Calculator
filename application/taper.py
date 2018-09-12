@@ -7,24 +7,24 @@ class TaperCalc:
         self.angle = angle
         self.length = length
 
-    def taperProperties(self):
+    def properties(self):
 
         warning = False
 
         if all([self.dia1 > 0, self.dia2 > 0, self.angle > 0]) and (self.length == 0):
-            self.length = self.getTaperLength()
+            self.length = self.get_taper_length()
         elif all([self.dia1 > 0, self.dia2 > 0, self.length > 0]) and (self.angle == 0):
-            self.angle = self.getTaperAngle()
+            self.angle = self.get_taper_angle()
         elif all([self.dia2 > 0, self.length > 0, self.angle > 0]) and (self.dia1 == 0):
-            self.dia1 = self.getTaperDia(self.dia1, self.dia2)
+            self.dia1 = self.get_taper_dia(self.dia1, self.dia2)
         elif all([self.dia1 > 0, self.length > 0, self.angle > 0]) and (self.dia2 == 0):
-            self.dia2 = self.getTaperDia(self.dia1, self.dia2)
+            self.dia2 = self.get_taper_dia(self.dia1, self.dia2)
         else:
             warning = True
 
         return self.angle, self.dia1, self.dia2, self.length, warning
 
-    def getTaperLength(self):
+    def get_taper_length(self):
         # get the opposite length
         opp = self.dia1 - self.dia2
         # convert input angle to radians
@@ -33,17 +33,17 @@ class TaperCalc:
         length = opp / 2 * cot
         return abs(length)
 
-    def getTaperAngle(self):
+    def get_taper_angle(self):
         # get the opposite length
         opp = (self.dia1 - self.dia2) / 2
         adj = self.length
         tangent = opp / adj
-        arctangent = atan(tangent)
-        angle = arctangent * (180 / pi)
+        arc_tangent = atan(tangent)
+        angle = arc_tangent * (180 / pi)
 
         return abs(angle)
 
-    def getTaperDia(self, dia1, dia2):
+    def get_taper_dia(self, dia1, dia2):
 
         if dia1 == 0:
             dia = dia2

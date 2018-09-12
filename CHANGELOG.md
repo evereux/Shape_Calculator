@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.6.3
+* pep8ify non qt driven var names.
+
 ## 0.6.2
 * Added "Z" dimension to racetrack calculations.
 

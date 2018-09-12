@@ -17,7 +17,7 @@ from .circle import CircleCalc
 from .elipse import ElipseCalc
 from .racetrack import RacetrackCalc
 from .rectangle import RectangleCalc
-from .scripts import convert2float, convertUnits, f_round, get_image
+from .scripts import convert2float, convert_units, f_round, get_image
 from .taper import TaperCalc
 from .version import email, title, version
 
@@ -127,7 +127,7 @@ Source code available at: <a href="https://github.com/evereux/Shape_Calculator">
         length = convert2float(self.txtTA_Length.text())
 
         taperObject = TaperCalc(angle, dia1, dia2, length)
-        taperList = taperObject.taperProperties()
+        taperList = taperObject.properties()
 
         qtTextList = [self.txtTA_Angle, self.txtTA_Diameter1, self.txtTA_Diameter2, self.txtTA_Length]
 
@@ -152,7 +152,7 @@ Source code available at: <a href="https://github.com/evereux/Shape_Calculator">
         cfm = convert2float(self.txtCLS_Circumference.text())
 
         circleObject = CircleCalc(dia, area, cfm)
-        circleList = circleObject.circleProperties()
+        circleList = circleObject.properties()
 
         qtTextList = [self.txtCLS_Diamter, self.txtCLS_Area, self.txtCLS_Circumference]
 
@@ -176,7 +176,7 @@ Source code available at: <a href="https://github.com/evereux/Shape_Calculator">
         cfm = convert2float(self.txtRTRK_cfm.text())
 
         racetrackObject = RacetrackCalc(x, y, area, cfm)
-        racetrackList = racetrackObject.racetrackProperties()
+        racetrackList = racetrackObject.properties()
 
         qtTextList = [self.txtRTRK_x, self.txtRTRK_y, self.txtRTRK_csa, self.txtRTRK_cfm]
 
@@ -202,7 +202,7 @@ Source code available at: <a href="https://github.com/evereux/Shape_Calculator">
         cfm = convert2float(self.txtElipses_circumference.text())
 
         elipseObject = ElipseCalc(semimajor, semiminor, area, cfm)
-        elipseList = elipseObject.elipse_properties()
+        elipseList = elipseObject.properties()
 
         qtTextList = [self.txtElipses_semimajor, self.txtElipses_semiminor,
                       self.txtElipses_csa]
@@ -227,7 +227,7 @@ Source code available at: <a href="https://github.com/evereux/Shape_Calculator">
         rectangleR = convert2float(self.txtRectangleR.text())
 
         rectangleObject = RectangleCalc(rectangleX, rectangleY, rectangleR)
-        rectangleList = rectangleObject.rectangleProperties()
+        rectangleList = rectangleObject.properties()
 
         qtTextList = [self.txtRectangleX, self.txtRectangleY,
                       self.txtRectangleR]
@@ -280,12 +280,12 @@ Source code available at: <a href="https://github.com/evereux/Shape_Calculator">
 
         # pass inputs to quantities calculator class
 
-        oLength = convertUnits(iLength, iLengthFrom, iLengthTo, "length", self.ureg)
-        oArea = convertUnits(iArea, iAreaFrom, iAreaTo, "area", self.ureg)
-        oVolume = convertUnits(iVolume, iVolumeFrom, iVolumeTo, "volume", self.ureg)
-        oMass = convertUnits(iMass, iMassFrom, iMassTo, "mass", self.ureg)
-        oDensity = convertUnits(iDensity, iDensityFrom, iDensityTo, "density", self.ureg)
-        oMassFlow = convertUnits(iMassFlow, iMassFlowFrom, iMassFlowTo, "massflow", self.ureg)
+        oLength = convert_units(iLength, iLengthFrom, iLengthTo, "length", self.ureg)
+        oArea = convert_units(iArea, iAreaFrom, iAreaTo, "area", self.ureg)
+        oVolume = convert_units(iVolume, iVolumeFrom, iVolumeTo, "volume", self.ureg)
+        oMass = convert_units(iMass, iMassFrom, iMassTo, "mass", self.ureg)
+        oDensity = convert_units(iDensity, iDensityFrom, iDensityTo, "density", self.ureg)
+        oMassFlow = convert_units(iMassFlow, iMassFlowFrom, iMassFlowTo, "massflow", self.ureg)
 
         self.lineEditOutputLength.setText(str(oLength))
         self.lineEditOutputArea.setText(str(oArea))
