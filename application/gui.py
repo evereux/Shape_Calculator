@@ -23,6 +23,7 @@ from .version import email, title, version
 
 
 class CalculateApp(QtGui.QMainWindow, uiFormTabs.Ui_MainWindow):
+    # noinspection PyCallByClass,PyCallByClass
     def __init__(self, parent=None):
         super(CalculateApp, self).__init__(parent)
         self.setupUi(self)
@@ -31,8 +32,6 @@ class CalculateApp(QtGui.QMainWindow, uiFormTabs.Ui_MainWindow):
         self.label.setText("{}".format(title))
 
         QtGui.QApplication.setStyle(QtGui.QStyleFactory.create("windowsxp"))
-
-
 
         # override the images defined in ui
         self.imageCircle.setPixmap(QtGui.QPixmap(_fromUtf8(get_image(image_name="circle"))))
@@ -44,8 +43,6 @@ class CalculateApp(QtGui.QMainWindow, uiFormTabs.Ui_MainWindow):
         icon_exit = QtGui.QIcon()
         icon_exit.addPixmap(QtGui.QPixmap(_fromUtf8(get_image(image_name="exit"))), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.actionExit.setIcon(icon_exit)
-
-
 
         # if the user clicked the calculate buttons
         self.btnReset.clicked.connect(self.resetFormFields)
@@ -78,6 +75,7 @@ class CalculateApp(QtGui.QMainWindow, uiFormTabs.Ui_MainWindow):
 
         sys.exit()
 
+    # noinspection PyCallByClass,PyCallByClass
     def fileAbout(self):
 
         text = """<h1>{}</h1>
@@ -131,7 +129,7 @@ Source code available at: <a href="https://github.com/evereux/Shape_Calculator">
 
         qtTextList = [self.txtTA_Angle, self.txtTA_Diameter1, self.txtTA_Diameter2, self.txtTA_Length]
 
-        if taperList[4] == True:
+        if taperList[4]:
 
             requirements = [3, 4]
             warning_box(self, requirements)
@@ -156,7 +154,7 @@ Source code available at: <a href="https://github.com/evereux/Shape_Calculator">
 
         qtTextList = [self.txtCLS_Diamter, self.txtCLS_Area, self.txtCLS_Circumference]
 
-        if circleList[3] == True:
+        if circleList[3]:
             requirements = [1, 3]
             warning_box(self, requirements)
             [i.setStyleSheet(self.errorFont[0]) for i in qtTextList]
@@ -180,7 +178,7 @@ Source code available at: <a href="https://github.com/evereux/Shape_Calculator">
 
         qtTextList = [self.txtRTRK_x, self.txtRTRK_y, self.txtRTRK_csa, self.txtRTRK_cfm]
 
-        if racetrackList[4] == True:
+        if racetrackList[4]:
             requirements = [2, 4]
             warning_box(self, requirements)
             [i.setStyleSheet(self.errorFont[0]) for i in qtTextList]
@@ -207,7 +205,7 @@ Source code available at: <a href="https://github.com/evereux/Shape_Calculator">
         qtTextList = [self.txtElipses_semimajor, self.txtElipses_semiminor,
                       self.txtElipses_csa]
 
-        if elipseList[4] == True:
+        if elipseList[4]:
             requirements = [2, 3]
             warning_box(self, requirements)
             [i.setStyleSheet(self.errorFont[0]) for i in qtTextList]
@@ -232,7 +230,7 @@ Source code available at: <a href="https://github.com/evereux/Shape_Calculator">
         qtTextList = [self.txtRectangleX, self.txtRectangleY,
                       self.txtRectangleR]
 
-        if rectangleList[5] == True:
+        if rectangleList[5]:
             requirements = [2, 3]
             warning_box(self, requirements)
             [i.setStyleSheet(self.errorFont[0]) for i in qtTextList]
@@ -297,9 +295,7 @@ Source code available at: <a href="https://github.com/evereux/Shape_Calculator">
 
 def warning_box(widget, requirements=[0, 0]):
     title = "Input Warning"
-    item = []
-    item.append(string.capwords(num2words(requirements[0])))
-    item.append(num2words(requirements[1]))
+    item = [string.capwords(num2words(requirements[0])), num2words(requirements[1])]
     tabIndex = (QtGui.QTabWidget.currentIndex(widget.btnConversions))
     if tabIndex == 3:
 
@@ -312,7 +308,6 @@ def warning_box(widget, requirements=[0, 0]):
                 "The remaing inputs must be set to 0.").format(item[0], item[1])
 
     warning = QtGui.QMessageBox.warning(widget,
-                                       "About {}".format(title),
-                                       text)
+                                        "About {}".format(title),
+                                        text)
     return warning
-

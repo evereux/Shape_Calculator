@@ -2,25 +2,26 @@ import os
 
 from decimal import Decimal
 
+
 def convert_units(value, unit_from, unit_to, unit, ureg):
-    vP = ""  # value power eg area m**2
+    v_p = ""  # value power eg area m**2
     allgood = False
     alist = ['length', 'mass', 'massflow']
 
     if unit in alist:
         allgood = True
     elif unit == "area":
-        vP = "**2"
+        v_p = "**2"
         unit_from = unit_from[:-1]
         unit_to = unit_to[:-1]
         allgood = True
     elif unit == "volume":
-        vP = "**3"
+        v_p = "**3"
         unit_from = unit_from[:-1]
         unit_to = unit_to[:-1]
         allgood = True
     elif unit == "density":
-        vP = "**3"
+        v_p = "**3"
         unit_from = unit_from[:-1]
         unit_to = unit_to[:-1]
         allgood = True
@@ -31,8 +32,8 @@ def convert_units(value, unit_from, unit_to, unit, ureg):
     v = 0
 
     if allgood:
-        unit_from = unit_from + vP
-        unit_to = unit_to + vP
+        unit_from = unit_from + v_p
+        unit_to = unit_to + v_p
         v = value * ureg.parse_expression(unit_from)
         v = v.to(ureg.parse_expression(unit_to))
         v = v.magnitude
@@ -55,6 +56,7 @@ def f_round(value):
     value = '{:.10f}'.format(value)
 
     return value
+
 
 def get_image(image_name):
     """

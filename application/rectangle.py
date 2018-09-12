@@ -1,5 +1,6 @@
 from math import pi
 
+
 class RectangleCalc:
     def __init__(self, x, y, r):
 
@@ -37,5 +38,4 @@ class RectangleCalc:
         area = area_rectangle - area_sqr_corners + area_circle
         cfm = cfm_rectangle - cfm_sqr_corners + cfm_circle
 
-        return (x, y, r, area, cfm, warning)
-
+        return x, y, r, area, cfm, warning

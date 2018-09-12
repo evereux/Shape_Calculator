@@ -1,13 +1,14 @@
-
 from math import pi
 
 from .circle import CircleCalc
+
 
 class RacetrackCalc:
     def __init__(self, x, y, area, cfm):
         self.x = x
         self.y = y
         self.z = 0
+        self.circumference = 0
         self.area = area
         self.cfm = cfm
 
@@ -48,7 +49,7 @@ class RacetrackCalc:
 
             warning = True
 
-        self.z = self.y*2+self.x
+        self.z = self.y * 2 + self.x
 
         return self.x, self.y, self.z, self.area, self.cfm, warning
 
@@ -56,8 +57,7 @@ class RacetrackCalc:
         # get the csa of the square portion
         csasqr = self.x * self.y
         # get the csa of the rounded ends
-        circleList = CircleCalc(self.y, 0, 0).properties()
-        self.area = circleList[1] + csasqr
-        self.cfm = circleList[2] + (self.x * 2)
+        circle_list = CircleCalc(self.y, 0, 0).properties()
+        self.area = circle_list[1] + csasqr
+        self.cfm = circle_list[2] + (self.x * 2)
         return self.area, self.cfm
-

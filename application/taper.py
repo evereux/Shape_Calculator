@@ -1,5 +1,6 @@
 from math import atan, cos, pi, tan, radians, sin
 
+
 class TaperCalc:
     def __init__(self, angle, dia1, dia2, length):
         self.dia1 = dia1
@@ -45,6 +46,7 @@ class TaperCalc:
 
     def get_taper_dia(self, dia1, dia2):
 
+        dia = 0
         if dia1 == 0:
             dia = dia2
         elif dia2 == 0:
@@ -63,8 +65,8 @@ class TaperCalc:
         opp = _sin * hyp
 
         if dia1 == 0:
-            oDia = dia + (opp * 2)
+            o_dia = dia + (opp * 2)
         elif dia2 == 0:
-            oDia = dia - (opp * 2)
+            o_dia = dia - (opp * 2)
 
-        return (abs(oDia))
+        return abs(o_dia)

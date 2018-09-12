@@ -1,5 +1,6 @@
 from math import pi, sqrt
 
+
 class CircleCalc:
     def __init__(self, dia, area, cfm):
 
@@ -33,7 +34,8 @@ class CircleCalc:
         return self.dia, self.area, self.cfm, warning
 
     # calculate the dia based on cfm
-    def f_dia(self, cfm):
+    @staticmethod
+    def f_dia(cfm):
         dia = cfm / pi
         return dia
 
