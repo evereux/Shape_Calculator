@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.6.2
+* Added "Z" dimension to racetrack calculations.
+
 ## 0.6.1
 * Updated logo.
 

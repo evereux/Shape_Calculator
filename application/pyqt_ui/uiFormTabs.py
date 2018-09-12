@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'uiFormTabs.ui'
+# Form implementation generated from reading ui file 'C:\Users\paul\Dropbox\Python\projects\Shape_Calculator\application\pyqt_ui\uiFormTabs.ui'
 #
 # Created by: PyQt4 UI code generator 4.11.4
 #
@@ -25,7 +25,7 @@ except AttributeError:
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName(_fromUtf8("MainWindow"))
-        MainWindow.resize(456, 549)
+        MainWindow.resize(455, 630)
         font = QtGui.QFont()
         font.setFamily(_fromUtf8("Arial"))
         font.setPointSize(11)
@@ -640,6 +640,19 @@ class Ui_MainWindow(object):
         self.txtRTRK_y.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
         self.txtRTRK_y.setObjectName(_fromUtf8("txtRTRK_y"))
         self.formLayout_3.setWidget(1, QtGui.QFormLayout.FieldRole, self.txtRTRK_y)
+        self.LabelRTz = QtGui.QLabel(self.tabRaceTrack)
+        self.LabelRTz.setObjectName(_fromUtf8("LabelRTz"))
+        self.formLayout_3.setWidget(4, QtGui.QFormLayout.LabelRole, self.LabelRTz)
+        self.txtRTRK_z = QtGui.QLineEdit(self.tabRaceTrack)
+        font = QtGui.QFont()
+        font.setPointSize(11)
+        self.txtRTRK_z.setFont(font)
+        self.txtRTRK_z.setAutoFillBackground(False)
+        self.txtRTRK_z.setStyleSheet(_fromUtf8("background: rgb(229, 229, 229)"))
+        self.txtRTRK_z.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.txtRTRK_z.setReadOnly(True)
+        self.txtRTRK_z.setObjectName(_fromUtf8("txtRTRK_z"))
+        self.formLayout_3.setWidget(4, QtGui.QFormLayout.FieldRole, self.txtRTRK_z)
         self.verticalLayout_4.addLayout(self.formLayout_3)
         self.horizontalLayout_5 = QtGui.QHBoxLayout()
         self.horizontalLayout_5.setObjectName(_fromUtf8("horizontalLayout_5"))
@@ -868,7 +881,7 @@ class Ui_MainWindow(object):
         self.verticalLayout.addWidget(self.btnConversions)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtGui.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 456, 21))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 455, 21))
         self.menubar.setObjectName(_fromUtf8("menubar"))
         self.menuFile = QtGui.QMenu(self.menubar)
         self.menuFile.setObjectName(_fromUtf8("menuFile"))
@@ -888,7 +901,7 @@ class Ui_MainWindow(object):
         self.menubar.addAction(self.menuExit.menuAction())
 
         self.retranslateUi(MainWindow)
-        self.btnConversions.setCurrentIndex(0)
+        self.btnConversions.setCurrentIndex(3)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
@@ -1028,10 +1041,12 @@ class Ui_MainWindow(object):
         self.txtRTRK_csa.setText(_translate("MainWindow", "0", None))
         self.txtRTRK_cfm.setText(_translate("MainWindow", "0", None))
         self.txtRTRK_y.setText(_translate("MainWindow", "0", None))
+        self.LabelRTz.setText(_translate("MainWindow", "Racetrack Z", None))
+        self.txtRTRK_z.setText(_translate("MainWindow", "0", None))
         self.btnRacetrack.setText(_translate("MainWindow", "Calculate", None))
         self.btnConversions.setTabText(self.btnConversions.indexOf(self.tabRaceTrack), _translate("MainWindow", "Racetrack", None))
         self.labelTitleElipse.setText(_translate("MainWindow", "Calculate Elipse Properties", None))
-        self.labelInputElipse.setText(_translate("MainWindow", "Required inputs: 2 of and 3 available inputs.", None))
+        self.labelInputElipse.setText(_translate("MainWindow", "Required inputs: 2 of 3 available inputs.", None))
         self.labelSMajor.setText(_translate("MainWindow", "Semimajor Dia", None))
         self.labelSMinor.setText(_translate("MainWindow", "Semiminor Dia", None))
         self.labelEArea.setText(_translate("MainWindow", "Area", None))

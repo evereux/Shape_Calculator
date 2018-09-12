@@ -7,12 +7,13 @@ class RacetrackCalc:
     def __init__(self, x, y, area, cfm):
         self.x = x
         self.y = y
+        self.z = 0
         self.area = area
         self.cfm = cfm
 
     def racetrackProperties(self):
 
-        # simply vars to make rest of function more readable.
+        # simplify vars to make rest of function more readable.
         width = self.x
         height = self.y
         area = self.area
@@ -30,14 +31,14 @@ class RacetrackCalc:
             rectangleArea = area - circleArea
             self.x = rectangleArea / height
             # get circumference
-            circleCircumference = 2 * pi * (height / 2)
-            rectangleEdgesCircumference = self.x * 2
-            self.cfm = circleCircumference + rectangleEdgesCircumference
+            circle_circumference = 2 * pi * (height / 2)
+            rectangle_edges_circumference = self.x * 2
+            self.cfm = circle_circumference + rectangle_edges_circumference
         # inputs for height and circumference.
         elif all([width == 0, height > 0, area == 0, circumference > 0]):
             # get width
-            circleCircumference = 2 * pi * (height / 2)
-            self.x = (circumference - circleCircumference) / 2
+            circle_circumference = 2 * pi * (height / 2)
+            self.x = (circumference - circle_circumference) / 2
             # get area
             circleArea = pi * ((height / 2) ** 2)
             rectangleArea = height * self.x
@@ -47,7 +48,9 @@ class RacetrackCalc:
 
             warning = True
 
-        return self.x, self.y, self.area, self.cfm, warning
+        self.z = self.y*2+self.x
+
+        return self.x, self.y, self.z, self.area, self.cfm, warning
 
     def getAreaCFM(self):
         # get the csa of the square portion

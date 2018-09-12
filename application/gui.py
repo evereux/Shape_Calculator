@@ -51,7 +51,7 @@ class CalculateApp(QtGui.QMainWindow, uiFormTabs.Ui_MainWindow):
         self.btnReset.clicked.connect(self.resetFormFields)
         self.btnTaper.clicked.connect(self.calculateTaper)
         self.btnCircles.clicked.connect(self.calculateCircles)
-        self.btnRacetrack.clicked.connect(self.calculateRacetrack)
+        self.btnRacetrack.clicked.connect(self.calculate_racetrack)
         self.btnElipses.clicked.connect(self.calculateElipses)
         self.btnConvert.clicked.connect(self.calculateConversions)
         self.btnRectangle.clicked.connect(self.calculateRectangle)
@@ -167,7 +167,7 @@ Source code available at: <a href="https://github.com/evereux/Shape_Calculator">
         qtTextList[1].setText(str(f_round(circleList[1])))
         qtTextList[2].setText(str(f_round(circleList[2])))
 
-    def calculateRacetrack(self):
+    def calculate_racetrack(self):
 
         # convert inputs to floats
         x = convert2float(self.txtRTRK_x.text())
@@ -189,8 +189,9 @@ Source code available at: <a href="https://github.com/evereux/Shape_Calculator">
 
         self.txtRTRK_x.setText(str(f_round(racetrackList[0])))
         self.txtRTRK_y.setText(str(f_round(racetrackList[1])))
-        self.txtRTRK_csa.setText(str(f_round(racetrackList[2])))
-        self.txtRTRK_cfm.setText(str(f_round(racetrackList[3])))
+        self.txtRTRK_z.setText(str(f_round(racetrackList[2])))
+        self.txtRTRK_csa.setText(str(f_round(racetrackList[3])))
+        self.txtRTRK_cfm.setText(str(f_round(racetrackList[4])))
 
     def calculateElipses(self):
 
