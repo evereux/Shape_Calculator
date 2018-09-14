@@ -14,7 +14,7 @@ except AttributeError:
 
 from application.pyqt_ui import uiFormTabs
 from .circle import CircleCalc
-from .elipse import ElipseCalc
+from .ellipse import EllipseCalc
 from .racetrack import RacetrackCalc
 from .rectangle import RectangleCalc
 from .scripts import convert2float, convert_units, f_round, get_image
@@ -37,7 +37,7 @@ class CalculateApp(QtGui.QMainWindow, uiFormTabs.Ui_MainWindow):
         self.imageCircle.setPixmap(QtGui.QPixmap(_fromUtf8(get_image(image_name="circle"))))
         self.imageTaper.setPixmap(QtGui.QPixmap(_fromUtf8(get_image(image_name="taper"))))
         self.imageRacetrack.setPixmap(QtGui.QPixmap(_fromUtf8(get_image(image_name="racetrack"))))
-        self.imageElipse.setPixmap(QtGui.QPixmap(_fromUtf8(get_image(image_name="elipse"))))
+        self.imageEllipse.setPixmap(QtGui.QPixmap(_fromUtf8(get_image(image_name="ellipse"))))
         self.imageRectangle.setPixmap(QtGui.QPixmap(_fromUtf8(get_image(image_name="rectangle"))))
         self.setWindowIcon(QtGui.QIcon(get_image(image_name="logo")))
         icon_exit = QtGui.QIcon()
@@ -49,7 +49,7 @@ class CalculateApp(QtGui.QMainWindow, uiFormTabs.Ui_MainWindow):
         self.btnTaper.clicked.connect(self.calculateTaper)
         self.btnCircles.clicked.connect(self.calculateCircles)
         self.btnRacetrack.clicked.connect(self.calculate_racetrack)
-        self.btnElipses.clicked.connect(self.calculateElipses)
+        self.btnEllipses.clicked.connect(self.calculateEllipses)
         self.btnConvert.clicked.connect(self.calculateConversions)
         self.btnRectangle.clicked.connect(self.calculateRectangle)
 
@@ -100,10 +100,10 @@ Source code available at: <a href="https://github.com/evereux/Shape_Calculator">
         self.txtRTRK_y.clear()
         self.txtRTRK_csa.clear()
         self.txtRTRK_cfm.clear()
-        self.txtElipses_semimajor.clear()
-        self.txtElipses_semiminor.clear()
-        self.txtElipses_csa.clear()
-        self.txtElipses_circumference.clear()
+        self.txtEllipses_semimajor.clear()
+        self.txtEllipses_semiminor.clear()
+        self.txtEllipses_csa.clear()
+        self.txtEllipses_circumference.clear()
         self.txtRectangleX.clear()
         self.txtRectangleY.clear()
         self.txtRectangleR.clear()
@@ -191,31 +191,31 @@ Source code available at: <a href="https://github.com/evereux/Shape_Calculator">
         self.txtRTRK_csa.setText(str(f_round(racetrackList[3])))
         self.txtRTRK_cfm.setText(str(f_round(racetrackList[4])))
 
-    def calculateElipses(self):
+    def calculateEllipses(self):
 
         # convert inputs to floats
-        semimajor = convert2float(self.txtElipses_semimajor.text())
-        semiminor = convert2float(self.txtElipses_semiminor.text())
-        area = convert2float(self.txtElipses_csa.text())
-        cfm = convert2float(self.txtElipses_circumference.text())
+        semimajor = convert2float(self.txtEllipses_semimajor.text())
+        semiminor = convert2float(self.txtEllipses_semiminor.text())
+        area = convert2float(self.txtEllipses_csa.text())
+        cfm = convert2float(self.txtEllipses_circumference.text())
 
-        elipseObject = ElipseCalc(semimajor, semiminor, area, cfm)
-        elipseList = elipseObject.properties()
+        ellipseObject = EllipseCalc(semimajor, semiminor, area, cfm)
+        ellipseList = ellipseObject.properties()
 
-        qtTextList = [self.txtElipses_semimajor, self.txtElipses_semiminor,
-                      self.txtElipses_csa]
+        qtTextList = [self.txtEllipses_semimajor, self.txtEllipses_semiminor,
+                      self.txtEllipses_csa]
 
-        if elipseList[4]:
+        if ellipseList[4]:
             requirements = [2, 3]
             warning_box(self, requirements)
             [i.setStyleSheet(self.errorFont[0]) for i in qtTextList]
         else:
             [i.setStyleSheet(self.errorFont[1]) for i in qtTextList]
 
-        self.txtElipses_semimajor.setText(str(f_round(elipseList[0])))
-        self.txtElipses_semiminor.setText(str(f_round(elipseList[1])))
-        self.txtElipses_csa.setText(str(f_round(elipseList[2])))
-        self.txtElipses_circumference.setText(str(f_round(elipseList[3])))
+        self.txtEllipses_semimajor.setText(str(f_round(ellipseList[0])))
+        self.txtEllipses_semiminor.setText(str(f_round(ellipseList[1])))
+        self.txtEllipses_csa.setText(str(f_round(ellipseList[2])))
+        self.txtEllipses_circumference.setText(str(f_round(ellipseList[3])))
 
     def calculateRectangle(self):
 

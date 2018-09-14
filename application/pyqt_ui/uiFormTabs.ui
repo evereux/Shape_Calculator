@@ -85,7 +85,7 @@
        <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>4</number>
       </property>
       <property name="elideMode">
        <enum>Qt::ElideNone</enum>
@@ -1782,13 +1782,13 @@
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="tabElipse">
+      <widget class="QWidget" name="tabEllipse">
        <attribute name="title">
-        <string>Elipse</string>
+        <string>Ellipse</string>
        </attribute>
        <layout class="QVBoxLayout" name="verticalLayout_5">
         <item>
-         <widget class="QLabel" name="labelTitleElipse">
+         <widget class="QLabel" name="labelTitleEllipse">
           <property name="font">
            <font>
             <pointsize>14</pointsize>
@@ -1798,12 +1798,12 @@
            <string notr="true">qproperty-alignment: AlignCenter;</string>
           </property>
           <property name="text">
-           <string>Calculate Elipse Properties</string>
+           <string>Calculate Ellipse Properties</string>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QLabel" name="labelInputElipse">
+         <widget class="QLabel" name="labelInputEllipse">
           <property name="font">
            <font>
             <pointsize>9</pointsize>
@@ -1851,7 +1851,7 @@
            </widget>
           </item>
           <item row="0" column="1">
-           <widget class="QLineEdit" name="txtElipses_semimajor">
+           <widget class="QLineEdit" name="txtEllipses_semimajor">
             <property name="font">
              <font>
               <pointsize>11</pointsize>
@@ -1866,7 +1866,7 @@
            </widget>
           </item>
           <item row="1" column="1">
-           <widget class="QLineEdit" name="txtElipses_semiminor">
+           <widget class="QLineEdit" name="txtEllipses_semiminor">
             <property name="font">
              <font>
               <pointsize>11</pointsize>
@@ -1881,7 +1881,7 @@
            </widget>
           </item>
           <item row="2" column="1">
-           <widget class="QLineEdit" name="txtElipses_csa">
+           <widget class="QLineEdit" name="txtEllipses_csa">
             <property name="font">
              <font>
               <family>Arial</family>
@@ -1903,7 +1903,7 @@
            </widget>
           </item>
           <item row="3" column="1">
-           <widget class="QLineEdit" name="txtElipses_circumference">
+           <widget class="QLineEdit" name="txtEllipses_circumference">
             <property name="font">
              <font>
               <family>Arial</family>
@@ -1942,7 +1942,7 @@
            </spacer>
           </item>
           <item>
-           <widget class="QPushButton" name="btnElipses">
+           <widget class="QPushButton" name="btnEllipses">
             <property name="minimumSize">
              <size>
               <width>200</width>
@@ -1978,7 +1978,7 @@
            </spacer>
           </item>
           <item>
-           <widget class="QLabel" name="imageElipse">
+           <widget class="QLabel" name="imageEllipse">
             <property name="maximumSize">
              <size>
               <width>329</width>

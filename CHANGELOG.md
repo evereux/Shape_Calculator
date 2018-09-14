@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.6.4
+* ParrottPatch: corrected spelling of ellipse.
+
 ## 0.6.3
 * pep8ify non qt driven var names.
 

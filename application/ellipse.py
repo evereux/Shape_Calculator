@@ -1,7 +1,7 @@
 from math import pi, sqrt
 
 
-class ElipseCalc:
+class EllipseCalc:
 
     def __init__(self, semimajor, semiminor, area, cfm):
         self.semimajor = semimajor

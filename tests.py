@@ -2,6 +2,7 @@
 from math import pi
 
 from application.circle import CircleCalc
+from application.ellipse import EllipseCalc
 
 def test_circle():
 
@@ -27,5 +28,13 @@ def test_circle():
     circle.properties()
     assert circle.dia == diameter
     assert circle.area == area
+
+def test_elipse():
+
+    # define elipse defaults
+    semimajor = 8
+    semiminor = 4
+    area = area
+    cfm = cfm
 
 
