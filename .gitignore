@@ -7,7 +7,7 @@ env/
 build/
 dist/
 venv/
-win32/
+
 
 run.spec
 run_onefile.spec
