@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.6.5
+* Fixed racetrack calculator and call up of num2words.
+
 ## 0.6.4
 * ParrottPatch: corrected spelling of ellipse.
 
