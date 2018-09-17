@@ -2,7 +2,7 @@ import os
 import string
 import sys
 
-import num2words
+from num2words import num2words
 import pint
 from PyQt4 import QtGui, QtCore
 
@@ -178,8 +178,8 @@ Source code available at: <a href="https://github.com/evereux/Shape_Calculator">
 
         qtTextList = [self.txtRTRK_x, self.txtRTRK_y, self.txtRTRK_csa, self.txtRTRK_cfm]
 
-        if racetrackList[4]:
-            requirements = [2, 4]
+        if racetrackList[5]:
+            requirements = [2, 5]
             warning_box(self, requirements)
             [i.setStyleSheet(self.errorFont[0]) for i in qtTextList]
         else:
