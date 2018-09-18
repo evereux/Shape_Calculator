@@ -49,7 +49,7 @@ class RacetrackCalc:
 
             warning = True
 
-        self.z = self.y * 2 + self.x
+        self.z = self.y + self.x
 
         return self.x, self.y, self.z, self.area, self.cfm, warning
 

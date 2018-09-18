@@ -1536,6 +1536,9 @@
         </item>
         <item>
          <layout class="QFormLayout" name="formLayout_3">
+          <property name="fieldGrowthPolicy">
+           <enum>QFormLayout::AllNonFixedFieldsGrow</enum>
+          </property>
           <item row="0" column="0">
            <widget class="QLabel" name="labelRTx">
             <property name="minimumSize">
@@ -1546,27 +1549,6 @@
             </property>
             <property name="text">
              <string>Racetrack X</string>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="0">
-           <widget class="QLabel" name="labelRTy">
-            <property name="text">
-             <string>Racetrack Y</string>
-            </property>
-           </widget>
-          </item>
-          <item row="2" column="0">
-           <widget class="QLabel" name="labelRTarea">
-            <property name="text">
-             <string>Area</string>
-            </property>
-           </widget>
-          </item>
-          <item row="3" column="0">
-           <widget class="QLabel" name="labelRTcircumference">
-            <property name="text">
-             <string>Circumference</string>
             </property>
            </widget>
           </item>
@@ -1585,7 +1567,36 @@
             </property>
            </widget>
           </item>
-          <item row="2" column="1">
+          <item row="1" column="0">
+           <widget class="QLabel" name="labelRTy">
+            <property name="text">
+             <string>Racetrack Y</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QLineEdit" name="txtRTRK_y">
+            <property name="font">
+             <font>
+              <pointsize>11</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>0</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="0">
+           <widget class="QLabel" name="labelRTarea">
+            <property name="text">
+             <string>Area</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="1">
            <widget class="QLineEdit" name="txtRTRK_csa">
             <property name="font">
              <font>
@@ -1607,7 +1618,14 @@
             </property>
            </widget>
           </item>
-          <item row="3" column="1">
+          <item row="4" column="0">
+           <widget class="QLabel" name="labelRTcircumference">
+            <property name="text">
+             <string>Circumference</string>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="1">
            <widget class="QLineEdit" name="txtRTRK_cfm">
             <property name="font">
              <font>
@@ -1629,29 +1647,14 @@
             </property>
            </widget>
           </item>
-          <item row="1" column="1">
-           <widget class="QLineEdit" name="txtRTRK_y">
-            <property name="font">
-             <font>
-              <pointsize>11</pointsize>
-             </font>
-            </property>
-            <property name="text">
-             <string>0</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-            </property>
-           </widget>
-          </item>
-          <item row="4" column="0">
+          <item row="2" column="0">
            <widget class="QLabel" name="LabelRTz">
             <property name="text">
              <string>Racetrack Z</string>
             </property>
            </widget>
           </item>
-          <item row="4" column="1">
+          <item row="2" column="1">
            <widget class="QLineEdit" name="txtRTRK_z">
             <property name="font">
              <font>
